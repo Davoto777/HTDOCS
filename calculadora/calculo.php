@@ -3,28 +3,13 @@ $num1 = $_POST['num1'];
 $num2 = $_POST['num2'];
 $opera = $_POST['opera'];
 
-switch ($opera) {
-    case '+':
-        $result = $num1 + $num2;
-        break;
-    case '-':
-        $result = $num1 - $num2;
-        break;
-    case '*':
-        $result = $num1 * $num2;
-        break;
-    case '/':
-        if ($num2 != 0) {
-            $result = $num1 / $num2;
-        } else {
-            echo "Error: División por cero.";
-            exit();
-        }
-        break;
-    default:
-        echo "Operación no válida.";
-        exit();
-    }
+$resultado = match($opera) {
+    '+' => $num1 + $num2,
+    '-' => $num1 - $num2,
+    '*' => $num1 * $num2,
+    '/' => $num2 != 0 ? $num1 / $num2 : 'Error: No se puede dividir entre cero',
+    default => 'Operación inválida',
+};
 
-
-echo "El resultado de este calculo es: $num1 $opera $num2 = $result";
+echo "El resultado de la operación es: $resultado";
+?>
