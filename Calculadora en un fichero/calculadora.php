@@ -1,5 +1,5 @@
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-  <?php
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
   $opera = $_POST['opera'];
@@ -13,11 +13,14 @@
   };
 
   echo "El resultado de la operación es: $resultado";
+  //cuando le das a calcular te sale el resultado sin que se vea el formulario
+  echo '<br><br><a href="">Volver a calcular</a>';
+ //tiene que aparecer el resultado sin que se vea el formulario.
+  echo '<style>form { display: none; }</style>'; // Oculta el formulario después de calcular
+ 
+}
   ?>
   <br><br>
-  <a href="">Volver a calcular</a>
-
-<?php else: ?>
 
   <!DOCTYPE html>
   <html lang="en">
@@ -46,5 +49,3 @@
       </form>
     </body>
   </html>
-
-<?php endif; ?>
