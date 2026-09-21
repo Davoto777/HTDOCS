@@ -1,19 +1,3 @@
-<?php
-$num1 = $_POST['num1'];
-$num2 = $_POST['num2'];
-$opera = $_POST['opera'];
-
-$resultado = match($opera) {
-    '+' => $num1 + $num2,
-    '-' => $num1 - $num2,
-    '*' => $num1 * $num2,
-    '/' => $num2 != 0 ? $num1 / $num2 : 'Error: No se puede dividir entre cero',
-    default => 'Operación inválida',
-};
-
-echo "El resultado de la operación es: $resultado";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +6,7 @@ echo "El resultado de la operación es: $resultado";
     <title>Calculadora</title>
   </head>
   <body>
-    <form action="calculo.php" method="POST">
+    <form action="" method="POST"> <!-- si se hace dentro del mismo fichero se pone "" donde el action -->
       <label>num 1:</label>
       <input type="number" name="num1" required />
 
@@ -41,3 +25,19 @@ echo "El resultado de la operación es: $resultado";
     </form>
   </body>
 </html>
+
+<?php
+$num1 = $_POST['num1'];
+$num2 = $_POST['num2'];
+$opera = $_POST['opera'];
+
+$resultado = match($opera) {
+    '+' => $num1 + $num2,
+    '-' => $num1 - $num2,
+    '*' => $num1 * $num2,
+    '/' => $num2 != 0 ? $num1 / $num2 : 'Error: No se puede dividir entre cero',
+    default => 'Operación inválida',
+};
+
+echo "El resultado de la operación es: $resultado";
+?>
