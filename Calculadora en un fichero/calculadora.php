@@ -1,5 +1,6 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//metodo con isset para comprobar si se ha enviado el formulario de forma sencilla y de forma corta
+  if (isset($_POST['num1'])) {
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
   $opera = $_POST['opera'];
@@ -13,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   };
 
   echo "El resultado de la operación es: $resultado";
-  //cuando le das a calcular te sale el resultado sin que se vea el formulario
   echo '<br><br><a href="">Volver a calcular</a>';
- //tiene que aparecer el resultado sin que se vea el formulario.
   echo '<style>form { display: none; }</style>'; // Oculta el formulario después de calcular
+
+
  
 }
   ?>
@@ -48,4 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Calcula</button>
       </form>
     </body>
+  
+
   </html>
