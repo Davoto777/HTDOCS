@@ -6,11 +6,10 @@ echo $n;
 echo $p;
 $USU='david';
 $CONTRA='1234';
-if ($n==$USU && $p==$CONTRA){
-    echo "<p>Bienvenido $n</p>";
-}
-else{
-    echo "<p>Usuario o contraseña incorrectos</p>";
+if ($n==$USU && $p==$CONTRA) {
+    echo "Bienvenido";
+} else {
+    echo "Usuario o contraseña incorrectos";
 }
 
 ?>
