@@ -4,10 +4,22 @@
 
 <?php
 $animal = array(
-    0 => array("perro", "gato"),
-    1 => array("lombriz", "burro"),
-    2 => array("murcielago", "cocodrilo")
+    array("perro", "gato"),
+    array("lombriz", "burro"),
+    array("murcielago", "cocodrilo")
 );
-var_dump($animal);
 
+//hacer un bucle for que recorra el array y muestre por pantalla cada animal de cada posición del array
+/*for ($i = 0; $i < count($animal); $i++) {
+    for ($j = 0; $j < count($animal[$i]); $j++) {
+        echo $animal[$i][$j] . "<br>";
+    }
+}
+*/
+//en vez de usar un for se puede usar un foreach para recorrer el array y mostrar por pantalla cada animal de cada posición del array
+foreach ($animal as $posicion) {
+    foreach ($posicion as $animal) {
+        echo $animal . "<br>";
+    }
+}
 ?>
