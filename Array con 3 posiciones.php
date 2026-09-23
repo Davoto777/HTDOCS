@@ -60,6 +60,7 @@ array(
     "hijos"=> array("Chris", "Meg", "Stewie")
 ),
 );
+var_dump($gente);
 //ahora tengo que hacer un bucle for para recorrer el array y mostrar los hijos de cada familia. pero encima de los hijos tiene que poner el nombre de la famila y arriba de la familia los padres y madres de cada familia y tambien quiero que se vea el nombre de el padre y la madre de cada familia.
 for ($i = 0; $i < count($gente); $i++) {
     echo "Familia: " . $gente[$i]["Familia"] . "<br>";
