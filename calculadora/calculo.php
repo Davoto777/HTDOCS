@@ -13,31 +13,3 @@ $resultado = match($opera) {
 
 echo "El resultado de la operación es: $resultado";
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="Calculadora" />
-    <title>Calculadora</title>
-  </head>
-  <body>
-    <form action="calculo.php" method="POST">
-      <label>num 1:</label>
-      <input type="number" name="num1" required />
-
-      <label>num 2:</label>
-      <input type="number" name="num2" required />
-
-      <label>opera:</label>
-      <select name="opera">
-        <option value="*">*</option>
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="/">/</option>
-      </select>
-      <br /><br />
-      <button type="submit">Calcula</button>
-    </form>
-  </body>
-</html>

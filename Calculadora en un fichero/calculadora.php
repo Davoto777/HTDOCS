@@ -1,5 +1,4 @@
 <?php
-//metodo con isset para comprobar si se ha enviado el formulario de forma sencilla y de forma corta
   if (isset($_POST['num1'])) {
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
