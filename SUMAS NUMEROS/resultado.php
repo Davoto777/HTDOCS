@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
-<meta charset="UTF-8">
 <?php
-$numeros = $_POST['numeros'] ?? [];
+$numeros = $_POST['numeros'];
 $resultado = array_sum($numeros);
 echo $numeros ? "<p>El resultado es: $resultado</p>" : "<p>No se enviaron números.</p>";
 ?>
