@@ -1,0 +1,20 @@
+<?php
+//Crea una función para resolver la ecuación de segundo grado. Esta función recibe los coeficientes de la ecuación y devuelve un array con las soluciones.
+// Si no hay soluciones reales, devuelve FALSE.
+
+function resolverEcuacionSegundoGrado($a, $b, $c) {
+    // Calculamos el discriminante
+    $discriminante = $b * $b - 4 * $a * $c;
+
+    // Si el discriminante es negativo, no hay soluciones reales
+    if ($discriminante < 0) {
+        return false;
+    }
+
+    // Calculamos las soluciones
+    $solucion1 = (-$b + sqrt($discriminante)) / (2 * $a);
+    $solucion2 = (-$b - sqrt($discriminante)) / (2 * $a);
+
+    // Devolvemos un array con las soluciones
+    return array($solucion1, $solucion2);
+}
