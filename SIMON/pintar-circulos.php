@@ -1,32 +1,48 @@
 <style>
-    .circulo{
-        display: inline-block;
-        width : 50px;
-        height : 50 px;
-        border-radius: 50;
-        margin:5px;
-    }
-    </style>
+  .circulo {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+</style>
+
+<h1>Simón Dice</h1>
+
+<!-- Formulario para elegir dificultad -->
+<form method="POST">
+  <button type="submit" name="modo" value="facil">Jugar Fácil</button>
+  <button type="submit" name="modo" value="dificil">Jugar Difícil</button>
+</form>
 
 <?php
-//Crear la funcion de pintar circulos con 8 colores en un simon pero que el usuario pueda elegir si quiere jugar con el numero de colores que le de la gana (o 4 o 8) pero no puede elegir que colores usar
+// Acepta el array $colores que le envíen
 function pintarCirculos($colores) {
-    foreach ($colores as $color) { 
+    foreach ($colores as $color) {
         echo "<div class='circulo' style='background-color: $color;'></div>";
-        return $colores;
     }
-} 
+    echo "<br>";
+}
 
+// Envía 4 colores
 function jugarFacil() {
-    $colores = array("red", "green", "blue", "yellow");
+    $colores = array("blue", "red", "green", "yellow");
     pintarCirculos($colores);
 }
 
-function jugarDificil(){
-    $colores = array("red", "green", "blue", "yellow", "orange", "pink", "purple", "gray");
+// Envía 8 colores
+function jugarDificil() {
+    $colores = array("blue", "red", "green", "yellow", "orange", "pink", "purple", "gray");
     pintarCirculos($colores);
 }
 
-
-jugarFacil();
-jugarDificil();
+// --- EJECUCIÓN SEGÚN EL BOTÓN PULSADO ---
+if (isset($_POST['modo'])) {
+    if ($_POST['modo'] == 'facil') {
+        jugarFacil();
+    } else {
+        jugarDificil();
+    }
+}
+?>
