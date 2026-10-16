@@ -43,6 +43,15 @@ if (isset($_POST['reiniciar'])) {
     border-radius: 50%;
     margin: 5px;
   }
+  /* Estilo nuevo para que los botones se vean como círculos sin texto */
+  .boton-color {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
 </style>
 
 <h1>Simón Dice</h1>
@@ -72,7 +81,7 @@ elseif ($_SESSION['fase'] == 'pintar') {
 
     echo '<h3>Botones para pintar:</h3><form method="POST">';
     foreach ($colores_disponibles as $color) {
-        echo "<button type='submit' name='color_pulsado' value='$color' style='background-color: $color; color: white; padding: 10px; margin: 2px;'>$color</button>";
+        echo "<button type='submit' name='color_pulsado' value='$color' class='boton-color' style='background-color: $color;'></button>";
     }
     echo '</form>';
 
